@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  
+}
+
+@layer utilities {
+
+}
+
+::placeholder{
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.input-placeholder ::placeholder{
+  font-size: 13px;
+}
