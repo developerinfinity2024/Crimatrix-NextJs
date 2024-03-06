@@ -1,5 +1,8 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 
 const navbarLinks = [
     {
@@ -8,35 +11,42 @@ const navbarLinks = [
     },
     {
         name: 'Settings',
-        link: 'settings',
+        link: '/settings',
     },
     {
         name: 'All Logs',
-        link: 'logs',
+        link: '/logs',
     },
     {
         name: 'All Hotels',
-        link: 'hotels',
+        link: '/hotels',
     },
     {
         name: 'Log Out',
-        link: 'logout',
+        link: '/logout',
     },
 ];
 
+
 const NavbarDesktop = () => {
+
+    const pathName = usePathname();
+    const activeLink = (url: string, pathname: string) => pathname === url ? "bg-[#333b4a] text-white" : "";
+
     return (
-        <ul className="gap-5 flex" >
-            {
-                navbarLinks.map((item) => (
-                    <li key={item.name}>
-                        <Link href={item.link} className='px-4 py-3 text-textDark text-[14px]'>
-                            {item.name}
-                        </Link>
-                    </li>
-                ))
-            }
-        </ul>
+        <article>
+            <ul className="gap-2 flex" >
+                {
+                    navbarLinks.map((item) => (
+                        <li key={item.name}>
+                            <Link href={item.link} className={`px-[34px] py-[14px] font-medium text-textDark text-[14px] rounded-[14px] ${activeLink(item.link, pathName)}`}>
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))
+                }
+            </ul>
+        </article>
     )
 }
 

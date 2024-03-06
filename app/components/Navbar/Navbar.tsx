@@ -1,52 +1,46 @@
-'use client'
-
 import Link from 'next/link';
 import { FaRegBell } from 'react-icons/fa6';
-import SearchBar from '../SearchBar';
-import { useState } from 'react';
 import NavbarDesktop from './NavbarDesktop';
-import NavbarMobile from './NavbarMobile'
+import Image from 'next/image';
 
 const Navbar = () => {
-  const [searchValue, setSearchValue] = useState('');
-
-  const handleSearchChange = (value: string) => {
-    setSearchValue(value);
-  };
 
   return (
     <nav className="bg-primary px-4">
-      <div className="flex justify-between items-center flex-wrap py-6 mx-auto max-w-[1440px]">
-        <Link href="/" className="text-[24px] font-semibold text-white">Crimatrix
+      <div className="flex justify-between items-center py-[25.1px] containerMargin">
+        <Link href="/" className="text-[24px]">
+          <Image
+            src="/Images/CrimatrixLogo.svg"
+            width={157.42}
+            height={38.2}
+            alt='Crimatrix Logo'
+          />
         </Link>
 
         {/* Navbar Desktop */}
-        <article className='lg:mx-auto lg:flex hidden'>
-          <NavbarDesktop />
-        </article>
+        <NavbarDesktop />
 
         {/* navbar CTA container */}
         <article className="flex gap-4 items-center md:order-3">
-          <div className='flex gap-2 items-center'>
-            <div className=" bg-[#2c3444] cursor-pointer p-1 rounded-3xl">
-              <FaRegBell className="text-white" size={20} />
+          <div className='flex gap-[14px] items-center'>
+            <div className="w-[48px] h-[48px] bg-[#2c3444] cursor-pointer rounded-3xl inline-flex justify-center items-center">
+              <Image
+                width={24}
+                height={24}
+                src="/Images/notification.svg"
+                alt='Dashboard Notification'
+              />
             </div>
-            <div className=" bg-[#2c3444] w-[26px] rounded-full cursor-pointer">
-              <img className="rounded-3xl" src="/Images/user.jpg" alt="" />
+            <div className=" bg-[#2c3444] rounded-full cursor-pointer">
+              <Image
+                width={48}
+                height={48}
+                src="/Images/User.svg"
+                alt='User Icon'
+              />
             </div>
           </div>
         </article>
-
-        {/* Search Bar Container */}
-        <div className='w-full mt-4 md:order-2 md:my-0 md:w-auto md:ml-auto md:mr-2 '>
-          <SearchBar value={searchValue} onChange={handleSearchChange} />
-        </div>
-
-        {/* Navbar Mobile */}
-        <article>
-          <NavbarMobile />
-        </article>
-
       </div>
     </nav >
   );

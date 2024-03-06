@@ -7,20 +7,20 @@ export default function Home() {
   return (
     <>
       <section className="bg-[#1a2033] relative">
-        <header className="pb-44 pt-10 px-4 max-w-[1440px] mx-auto">
-          <h1 className="font-semibold text-white text-[23px] mb-4">
+        <header className="pb-[136px] pt-10 px-7 containerMargin">
+          <h1 className="font-semibold text-white text-[24px] mb-4">
             Welcome back, Sarfaraz
           </h1>
-          <p className="text-textDark">Dashboard</p>
+          <p className="text-textDark text-[14px]">Dashboard</p>
         </header>
-        <section className="grid gap-7 grid-cols-3 absolute top-[180px] max-w-[1440px] lg:mx-auto lg:bottom-[-114px] left-0 right-0 mx-4 ">
+        <section className="grid grid-cols-3 gap-6 absolute top-[162px] lg:bottom-[-114px] left-0 right-0 containerMargin">
           <Card>Test Card</Card>
           <Card>Test Card</Card>
           <Card>Test Card</Card>
         </section>
       </section>
 
-      <section className="max-w-[1440px] md:mx-4 lg:mx-auto mt-40 flex flex-col gap-2">
+      <section className="containerMargin mt-40 flex flex-col gap-2">
         {/* Recent Hotels */}
         <article className="my-6">
           <header className="flex justify-between items-center py-2">
