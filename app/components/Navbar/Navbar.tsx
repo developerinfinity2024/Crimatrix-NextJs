@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { FaRegBell } from 'react-icons/fa6';
 import NavbarDesktop from './NavbarDesktop';
 import Image from 'next/image';
+import NavbarSearch from './NavbarSearch';
 
 const Navbar = () => {
 
@@ -22,6 +22,7 @@ const Navbar = () => {
 
         {/* navbar CTA container */}
         <article className="flex gap-4 items-center md:order-3">
+          <NavbarSearch />
           <div className='flex gap-[14px] items-center'>
             <div className="w-[48px] h-[48px] bg-[#2c3444] cursor-pointer rounded-3xl inline-flex justify-center items-center">
               <Image

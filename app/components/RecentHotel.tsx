@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-
+import { useEffect } from "react"
 const HotelHeader = [
     "Hotel Name",
     "Active",
@@ -45,6 +45,15 @@ const hotelData = [
         actions: "CTA"
     },
 ]
+
+// useEffect(() => {
+//   first
+
+//   return () => {
+    
+//   }
+// }, [third])
+
 
 const actionsEventHandler = (index: number) => {
     const ele = document.getElementById(`actions-${index}`);

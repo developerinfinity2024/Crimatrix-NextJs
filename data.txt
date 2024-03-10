@@ -1,0 +1,61 @@
+{
+        "guest": {
+            "createdAt": "2024-02-08 07:57:53",
+            "updatedAt": "2024-02-10 06:23:41",
+            "createdBy": "646485e939d8e82ead79d30f",
+            "updatedBy": "646485e939d8e82ead79d30f",
+            "id": "65c4898179ca134d1e8aa65b",
+            "roomNos": "205",
+            "name": "NAVAJYOTI BARUAH",
+            "age": 0,
+            "mobile": "7002123591",
+            "nationality": "India",
+            "additionalMembers": [
+                {
+                    "name": "",
+                    "dob": ""
+                }
+            ],
+            "sex": "Male",
+            "checkedInAt": "2024-02-08T13:27:53.021+05:30",
+            "checkOutAt": "2024-02-09T13:27:53.021+05:30",
+            "comingFrom": "BAKSA",
+            "goingTo": "BAKSA",
+            "vehicleNo": "",
+            "idType": "Aadhar Card ",
+            "idNo": "2925 3594 7609",
+            "hotelId": "6464882339d8e82ead79d325",
+            "hotel": {
+
+                 https://d15cxnmxbwc69s.cloudfront.net/guest-images/6464882339d8e82ead79d325_guest.jpg
+                 
+                "id": "6464882339d8e82ead79d325",    // use for image url
+                "name": "HOTEL NOR'-EAST",
+                "contactPerson": "RABIUL CHAND",
+                "email": "hotelnoreast@gmail.com",
+                "status": false,
+                "mobile": "8472943133",
+                "address": {
+                    "line1": "HP BRAHAMACHARI ROAD ",
+                    "line2": "PALTAN BAZAR",
+                    "pin": "781008",
+                    "coordinates": null,
+                    "type": null,
+                    "district": "Kamrup Metro",
+                    "state": null,
+                    "country": null
+                },
+                "organizationType": "HOTEL",
+                "oldHotelId": 0,
+                "noOfRooms": 33,
+                "tags": null,
+                "licenceNo": "GMC/CZ/18/HTL/202324/12280124",
+                "policeStation": "64303c62806a34105fdf89d6"
+            },
+            "checkedOutStatus": true,
+            "imageUrls": [
+                "1707379072664_guest.jpeg"
+            ],
+            "psId": "64303c62806a34105fdf89d6",
+            "dob": "1996-11-21T00:00:00.000+05:30"
+        },
