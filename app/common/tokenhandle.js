@@ -1,4 +1,4 @@
-const key = "accessToken";
+// const key = "accessToken";
 
 const storetoken = (token) => {
   if (typeof window !== "undefined") {

@@ -1,11 +1,12 @@
-import Card from "./Card";
+import Card from './Card';
 
 const HotelStatistics = () => {
     return (
         <Card>
-            Testing
+            Testing Cards
         </Card>
-    )
-}
+    );
+};
 
 export default HotelStatistics;
+

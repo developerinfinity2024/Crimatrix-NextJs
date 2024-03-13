@@ -21,7 +21,7 @@ const Navbar = () => {
         <NavbarDesktop />
 
         {/* navbar CTA container */}
-        <article className="flex gap-4 items-center md:order-3">
+        <article className="flex relative gap-4 items-center md:order-3">
           <NavbarSearch />
           <div className='flex gap-[14px] items-center'>
             <div className="w-[48px] h-[48px] bg-[#2c3444] cursor-pointer rounded-3xl inline-flex justify-center items-center">

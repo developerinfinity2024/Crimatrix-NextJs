@@ -3,9 +3,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation';
-
 import axios from 'axios';
 import tokenhandle from "../../common/tokenhandle"
+
 const navbarLinks = [
     {
         name: 'Dashboard',
@@ -35,18 +35,18 @@ const NavbarDesktop = () => {
     const activeLink = (url: string, pathname: string) => pathname === url ? "bg-[#333b4a] text-white" : "";
 
     const handleLogout = () => {
-            const token = sessionStorage.getItem("accessToken")
-            axios({
-                url: "https://backend.crimatrix.com/crimatrix-backend/v1/auth/signout",
-                method: "POST",
-                headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, },
+        const token = sessionStorage.getItem("accessToken")
+        axios({
+            url: "https://backend.crimatrix.com/crimatrix-backend/v1/auth/signout",
+            method: "POST",
+            headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, },
+        })
+            .then((res) => {
+                console.log(res?.data);
+                tokenhandle.clearToken();
+                router.push("/");
             })
-                .then((res) => {
-                    console.log(res?.data);
-                    tokenhandle.clearToken();
-                    router.push("/");
-                })
-                .catch((err) => { });
+            .catch((err) => { });
     };
 
     return (
@@ -58,7 +58,7 @@ const NavbarDesktop = () => {
                             {item.name === 'Log Out' ? (
                                 <button
                                     onClick={handleLogout}
-                                    className={`px-[34px] py-[14px] font-medium text-textDark text-[14px] rounded-[14px] ${activeLink(item.link, pathName)}`}
+                                    className={`px-[34px] py-[14px] font-medium text-textDark text-[14px] rounded-[14px]`}
                                 >
                                     {item.name}
                                 </button>

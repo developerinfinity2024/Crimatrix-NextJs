@@ -1,7 +1,20 @@
 'use client'
 
 import Image from "next/image"
-import { useEffect } from "react"
+
+interface Hotel {
+    name: string,
+    active: string,
+    watchlist: string,
+    lookOut: string,
+    location: string,
+    actions: string,
+}
+
+interface HotelProps {
+    HotelData: Hotel[]
+}
+
 const HotelHeader = [
     "Hotel Name",
     "Active",
@@ -11,50 +24,6 @@ const HotelHeader = [
     "Actions"
 ]
 
-const hotelData = [
-    {
-        name: "New Tajmahal Hotel",
-        active: "443",
-        watchlist: "233",
-        lookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-    {
-        name: "New Tajmahal Hotel",
-        active: "443",
-        watchlist: "233",
-        LookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-    {
-        name: "New Tajmahal Hotel",
-        active: "443",
-        watchist: "233",
-        lookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-    {
-        name: "New Tajmahal Hotel",
-        active: "433",
-        watchlist: "233",
-        lookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-]
-
-// useEffect(() => {
-//   first
-
-//   return () => {
-    
-//   }
-// }, [third])
-
-
 const actionsEventHandler = (index: number) => {
     const ele = document.getElementById(`actions-${index}`);
     if (ele) {
@@ -62,7 +31,7 @@ const actionsEventHandler = (index: number) => {
     }
 }
 
-const RecentHotel = () => {
+const RecentHotel: React.FC<HotelProps> = ({ HotelData }) => {
     return (
         <>
             {/* Table Headers */}
@@ -78,7 +47,7 @@ const RecentHotel = () => {
             </div>
 
             {/* Table Rows */}
-            {hotelData.map((hotel, rowIndex) => {
+            {HotelData.map((hotel, rowIndex) => {
                 return (
                     <div key={rowIndex} className={`grid grid-cols-6 gap-4 justify-between bg-white rounded-md my-4 py-[13.5px] px-4 items-center border-[1.26px] border-[#E1E8EE]`}>
                         {Object.values(hotel).map((item, index) => {

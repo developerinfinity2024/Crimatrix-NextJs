@@ -32,22 +32,19 @@ export default function Login() {
         router.push('/police')
       })
         .catch((err) => {});
-    
- 
-
   }
 
   return (
     <section className="bg-[#f5f6fc] flex flex-col justify-between h-[100vh]">
       {/* Header */}
-      <header className="flex justify-between py-[10px] px-4 text-white mb-[87px]  sticky top-0 z-10 shadow-md bg-white">
+      <nav className="flex justify-between py-[10px] px-4 text-white mb-[87px]  sticky top-0 z-10 shadow-md bg-white">
         <Image
           src="/Images/logo.png"
           alt="crimatrix logo"
           width={223}
           height={43}
         />
-      </header>
+      </nav>
 
       {/* login pages container */}
       <article className='lg:flex flex-row-reverse gap-10 lg:max-w-[1540px] lg:mx-auto'>
