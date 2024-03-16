@@ -12,10 +12,6 @@ const navbarLinks = [
         link: '/police',
     },
     {
-        name: 'Settings',
-        link: '/police/settings',
-    },
-    {
         name: 'All Logs',
         link: '/police/logs',
     },

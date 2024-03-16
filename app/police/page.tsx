@@ -1,5 +1,4 @@
 import React from 'react'
-import RecentHotel from "../components/RecentHotel";
 import RecentLogs from "../components/RecentLogs";
 import Button from "../components/Button";
 import HotelStatistics from '@/app/components/HotelStatistics';
@@ -43,41 +42,6 @@ const guestData = [
     },
 ];
 
-const hotelData = [
-    {
-        name: "Tajmahal Hotel",
-        active: "443",
-        watchlist: "233",
-        lookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-    {
-        name: "Khanapara Hotel",
-        active: "443",
-        watchlist: "233",
-        lookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-    {
-        name: "Sixmile Hotel 1",
-        active: "443",
-        watchlist: "233",
-        lookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-    {
-        name: "Jayanagar Hotel 1",
-        active: "433",
-        watchlist: "233",
-        lookOut: "0",
-        location: "Chakbazar, New Delhi, India",
-        actions: "CTA"
-    },
-]
-
 const page = () => {
     return (
         <>
@@ -99,14 +63,6 @@ const page = () => {
             </section>
 
             <section className="containerMargin mt-[176px] flex flex-col gap-2">
-                {/* Recent Hotels */}
-                <article className="my-6">
-                    <header className="flex mb-[24px] justify-between items-center py-2">
-                        <h2 className="font-semibold text-[22px]">Recent Hotels</h2>
-                        <Button link="/police/hotels">View All</Button>
-                    </header>
-                    <RecentHotel HotelData={hotelData} />
-                </article >
 
                 {/* Recent Logs */}
                 <article className="my-6">

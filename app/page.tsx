@@ -6,12 +6,10 @@ import { TfiEmail } from "react-icons/tfi";
 import { FiLock } from "react-icons/fi";
 import { FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
-import { useDispatch } from 'react-redux';
 
 import axios from "axios";
 export default function Login() {
-
-
+  
   const router = useRouter()
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
