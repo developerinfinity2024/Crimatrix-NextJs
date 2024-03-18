@@ -3,9 +3,10 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation';
+
 import axios from 'axios';
 import tokenhandle from "../../common/tokenhandle"
-
+import { useCookies } from 'react-cookie';
 const navbarLinks = [
     {
         name: 'Dashboard',
@@ -26,10 +27,10 @@ const navbarLinks = [
 ];
 
 const NavbarDesktop = () => {
+    const [, ,removeCookie] = useCookies(['accessToken']);
     const router = useRouter();
     const pathName = usePathname();
     const activeLink = (url: string, pathname: string) => pathname === url ? "bg-[#333b4a] text-white" : "";
-
     const handleLogout = () => {
         const token = sessionStorage.getItem("accessToken")
         axios({
@@ -38,8 +39,8 @@ const NavbarDesktop = () => {
             headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, },
         })
             .then((res) => {
-                console.log(res?.data);
                 tokenhandle.clearToken();
+                removeCookie('accessToken', { path: '/' });
                 router.push("/");
             })
             .catch((err) => { });

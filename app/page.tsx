@@ -6,10 +6,13 @@ import { TfiEmail } from "react-icons/tfi";
 import { FiLock } from "react-icons/fi";
 import { FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
-
+import { useDispatch } from 'react-redux';
+import { } from 'cookie';
 import axios from "axios";
+import { useCookies } from "react-cookie"
 export default function Login() {
-  
+
+  const [cookie, setCookie] = useCookies(["accessToken"])
   const router = useRouter()
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -23,26 +26,45 @@ export default function Login() {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       data: JSON.stringify({ username, password }),
-  })
+    })
       .then((res) => {
         console.log(res)
         sessionStorage.setItem("accessToken", res?.data?.accessToken);
+        console.log("Cookie Value:", res?.data?.accessToken);
+        try {
+          // Set the JWT token in a cookie
+          // setCookie("accessToken", res?.data?.accessToken, {
+          //   httpOnly: true, // Ensures the cookie is only accessible via HTTP requests
+          //   secure: process.env.NODE_ENV === "production", // Set to true in production for HTTPS
+          //   maxAge: 3600, // Cookie expiration time in seconds (1 hour in this example)
+          //   path: "/", // Cookie path
+          // });
+          setCookie("accessToken", JSON.stringify(res?.data?.accessToken), {
+            path: "/",
+            maxAge: 3600, // Expires after 1hr
+            sameSite: true,
+          })
+          console.log("Cookie Set Successfully!");
+        } catch (error) {
+          console.error("Error setting cookie:", error);
+        }
+
         router.push('/police')
       })
-        .catch((err) => {});
+      .catch((err) => { });
   }
 
   return (
     <section className="bg-[#f5f6fc] flex flex-col justify-between h-[100vh]">
       {/* Header */}
-      <nav className="flex justify-between py-[10px] px-4 text-white mb-[87px]  sticky top-0 z-10 shadow-md bg-white">
+      <header className="flex justify-between py-[10px] px-4 text-white mb-[87px] ">
         <Image
           src="/Images/logo.png"
           alt="crimatrix logo"
           width={223}
           height={43}
         />
-      </nav>
+      </header>
 
       {/* login pages container */}
       <article className='lg:flex flex-row-reverse gap-10 lg:max-w-[1540px] lg:mx-auto'>

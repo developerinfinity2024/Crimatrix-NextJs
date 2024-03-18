@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/login/police", "app/login/hotel", "app/components/Navbar/NavbarSearch.tsx", "app/components/Navbar/NavbarSearch"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/login/police", "app/login/hotel", "app/components/Navbar/NavbarSearch.tsx", "app/components/Navbar/NavbarSearch", "middleware.js"],
   "exclude": ["node_modules"]
 }

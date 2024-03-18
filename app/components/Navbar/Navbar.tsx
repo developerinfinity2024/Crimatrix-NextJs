@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="bg-primary px-4">
       <div className="flex justify-between items-center py-[25.1px] containerMargin">
-        <Link href="/" className="text-[24px]">
+        <Link href="/police" className="text-[24px]">
           <Image
             src="/Images/CrimatrixLogo.svg"
             width={157.42}
